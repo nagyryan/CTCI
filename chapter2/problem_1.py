@@ -16,8 +16,8 @@ class Node:
 
 # With temporary buffer
 # Assumptions: First value is always going to be unique
-# Algorithm: O(n) -> since we are iterating over entire linked list
-# Memory: O()
+# Time: O(n) -> since we are iterating over entire linked list
+# Space: O(n) -> memory increases linearly with input linked list
 def solution1(head: Node) -> Node:
     if head is None:
         return head
@@ -36,8 +36,8 @@ def solution1(head: Node) -> Node:
     return head
 
 # In place modification
-# Algorithm: O(n^2)
-# Space: O(1)
+# Time: O(n^2) -> iterating over linked list for every element
+# Space: O(1) -> no additional memory needed since deletion is done in place
 def solution2(head: Node) -> Node:
     if (head is None):
         return head
