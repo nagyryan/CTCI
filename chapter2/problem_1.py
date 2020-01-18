@@ -32,7 +32,6 @@ def solution1(head: Node) -> Node:
         else:
             prev.next = current.next
             current = prev.next
-    print(seen_data)
     return head
 
 # In place modification
@@ -56,10 +55,12 @@ def solution2(head: Node) -> Node:
 def main():
     # 2 -> 2 -> 5 -> 5
     # 2 -> 5
+    test_input = [2,5,5]
     test_input_node_1 = Node(2)
-    test_input_node_1.next = Node(2)
-    test_input_node_1.next.next = Node(5)
-    test_input_node_1.next.next.next = Node(5)
+    runner = test_input_node_1
+    for x in test_input:
+        runner.next = Node(x)
+        runner = runner.next
     test_input_node_1.print_all_nodes()
     test_output_node_1 = solution1(test_input_node_1)
     test_output_node_1.print_all_nodes()
