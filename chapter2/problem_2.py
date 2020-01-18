@@ -9,9 +9,13 @@ class Node:
 
     def print_all_nodes(self):
         while(self):
-            print(f"{self.val}", end = "->")
+            if (self.next is None):
+                print(f"{self.val}", end = "")
+            else:
+                print(f"{self.val}", end = "->")
             self = self.next
         print("")
+
 
 # Have runner move k positions aheead
 def solution1(head: Node, k: int) -> int:
@@ -40,7 +44,6 @@ def main():
     for x in test_input:
         runner.next = Node(x)
         runner = runner.next
-
     test_input_node_1.print_all_nodes()
     second_to_last_element = solution1(test_input_node_1, 2)
     third_to_last_element = solution1(test_input_node_1, 3)

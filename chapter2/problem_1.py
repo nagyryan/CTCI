@@ -10,9 +10,13 @@ class Node:
 
     def print_all_nodes(self):
         while(self):
-            print(f"{self.val}", end = "->")
+            if (self.next is None):
+                print(f"{self.val}", end = "")
+            else:
+                print(f"{self.val}", end = "->")
             self = self.next
         print("")
+
 
 # With temporary buffer
 # Assumptions: First value is always going to be unique
